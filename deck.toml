@@ -1,0 +1,19 @@
+[package]
+name = "@jennifer/statsd"
+version = "0.1.0"
+description = "A StatsD client: counters, gauges, timings and sets over UDP, with sample rates, DogStatsD tags and batching"
+license = "LGPL-3.0-only"
+authors = ["mplx <mplx@jennifer-lang.dev>"]
+# The deck sends UDP datagrams to a StatsD agent, so it opens sockets. No
+# `exec`, no `sql`.
+capabilities = ["net"]
+keywords = ["statsd", "dogstatsd", "metrics", "monitoring", "observability", "udp"]
+
+[package.urls]
+deck = "https://raw.githubusercontent.com/jennifer-language/deck-statsd/main/deck.toml"
+homepage = "https://github.com/jennifer-language/deck-statsd"
+manual = "https://jennifer-language.github.io/deck-statsd/"
+
+# Only the default binary: `jennifer-tiny` has no `net` capability.
+[engines]
+jennifer = ">=0.25.0"
